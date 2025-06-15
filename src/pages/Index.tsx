@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import KpiCard from "@/components/KpiCard";
 import TechnicianList from "@/components/TechnicianList";
@@ -35,7 +34,20 @@ const dummyStats = [
   },
 ];
 
+import { useAuth } from "@/hooks/useAuth";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Index = () => {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate("/auth");
+    }
+  }, [user, loading, navigate]);
+
   return (
     <div className="min-h-screen bg-[hsl(var(--background))]">
       <Header />
@@ -73,4 +85,3 @@ const Index = () => {
 };
 
 export default Index;
-
