@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import KpiCard from "@/components/KpiCard";
 import TechnicianList from "@/components/TechnicianList";
 import ErrorTable from "@/components/ErrorTable";
-import SectionPartnership from "@/components/SectionPartnership";
 // Icons
 import { ListCheck, Users, Settings, Check } from "lucide-react";
 
@@ -64,8 +63,7 @@ const Index = () => {
         {/* Listes des techniciens */}
         <TechnicianList />
 
-        {/* Section partenariat */}
-        <SectionPartnership />
+        {/* Section partenariat retirée */}
       </main>
       <footer className="text-xs text-gray-400 text-center my-8">
         ONG BASIA &copy; {new Date().getFullYear()} &ndash; L'art de préserver la nature
@@ -75,3 +73,4 @@ const Index = () => {
 };
 
 export default Index;
+
